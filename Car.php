@@ -6,6 +6,7 @@ require_once 'Vehicle.php';
 class Car extends Vehicle
 {
     private int $energyLevel;
+    private bool $hasParkBrake=true;
 
     public function __construct(string $color, int $nbSeats, string $energy)
 
@@ -24,6 +25,11 @@ class Car extends Vehicle
 
     public function start(): string
     {
+            if ($this->hasParkBrake === true) {
+         
+                throw new Exception("Park Brake is active !");
+         
+            }
         $this->currentSpeed = 5;
 
         return "Let's go !";
@@ -64,4 +70,18 @@ class Car extends Vehicle
 
         $this->energyLevel = $energyLevel;
     }
+
+    public function setParkBrake():void 
+    {
+        $this->hasParkBrake;
+    }
+
+public function getParkBrake():string
+
+{
+if ($this->hasParkBrake===true) {
+    return "Le frein à main est actif !";
+}
+return "Le frein à main est inactif !";
+}
 }
