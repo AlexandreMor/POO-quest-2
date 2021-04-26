@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once "LightableInterface";
 
 
 class Truck extends Vehicle implements LightableInterface
