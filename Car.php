@@ -3,7 +3,7 @@
 require_once 'Vehicle.php';
 
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
     private int $energyLevel;
     private bool $hasParkBrake=true;
@@ -83,5 +83,13 @@ if ($this->hasParkBrake===true) {
     return "Le frein à main est actif !";
 }
 return "Le frein à main est inactif !";
+}
+
+public function switchOn():bool {
+    return true;
+}
+
+public function switchOff():bool {
+    return false;
 }
 }

@@ -3,7 +3,7 @@
 require_once 'Vehicle.php';
 
 
-class Truck extends Vehicle
+class Truck extends Vehicle implements LightableInterface
 {
 
     private int $energyLevel;
@@ -101,5 +101,13 @@ class Truck extends Vehicle
         if ($this->getSpace() === $this->getStorage()) {
             return "full";
         }
+    }
+
+    public function switchOn():bool {
+        return true;
+    }
+    
+    public function switchOff():bool {
+        return false;
     }
 }

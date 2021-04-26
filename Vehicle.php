@@ -31,7 +31,6 @@ class Vehicle
         $this->nbSeats = $nbSeats;
     }
 
-
     public function forward(): string
 
     {
